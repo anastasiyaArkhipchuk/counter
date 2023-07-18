@@ -1,3 +1,62 @@
+.all{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.settingsAll{
+  background-color: gray;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  height: 350px;
+  margin-top: 100px;
+  border: 5px solid cornflowerblue;
+  border-radius: 7px;
+}
+.settings {
+  display: grid;
+  grid-template-areas:
+"w"
+"e";
+}
+.titleSettings{
+  grid-area: w;
+  background: gray;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 150px;
+  margin-top: 50px;
+  border: 5px solid cornflowerblue;
+  border-radius: 7px;
+  text-align: center;
+  color: white;
+  padding-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+}
+.buttonsSettings{
+  grid-area: e;
+  background-color: gray;
+  margin-left: auto;
+  margin-right: auto;
+  grid-gap: 300px;
+}
+.counterAll {
+  background-color: gray;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  height: 350px;
+  margin-top: 100px;
+  border: 5px solid cornflowerblue;
+  border-radius: 7px;
+}
+.counter {
+  display: grid;
+  grid-template-areas:
+"c"
+"h";
+}
 .title{
   font-size: 100px;
   grid-area: c;
@@ -47,26 +106,8 @@ font-size: 20px;
   background-color: white;
   font-weight: bold;
 }
-.appWrapper {
-  display: grid;
-  grid-template-areas:
-"c"
-"h";
-}
-.all {
-  display: grid;
-  grid-template-areas:
-"n";
-  grid-area: n;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: gray;
-  width: 800px;
-  height: 350px;
-  margin-top: 100px;
-  border: 5px solid cornflowerblue;
-  border-radius: 7px;
-}
+
+
 html{
   min-height: 100%;
   min-width: 100%;
