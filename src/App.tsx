@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import './App.css';
 import {Button} from "./Button";
 
@@ -15,24 +15,39 @@ function App() {
     }
     const CountPlusDisable = count === maxValue
     const CountResetDisable = count === startValue
+    // const SetDisable = {
+    //     startValue < 0 ||
+    // }
+    const setMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setMaxValue(+e.currentTarget.value)
+    }
+    const setStartValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setStartValue(+e.currentTarget.value)
+    }
+    const settingsSet = () => {
+        let finMaxValue = maxValue
+        let finStartValue = startValue
+        setCount(finStartValue)
+        setMaxValue(finMaxValue)
+        setStartValue(finStartValue)
+    }
     return (
         <div className={'all'}>
             <div className={'settingsAll'}>
                 <div className={'settings'}>
                     <div className={'titleSettings'}>
-                        <div>max value: <input type={"number"}/></div>
-                        <div>start value: <input type={"number"}/></div>
+                        <div>max value: <input type={"number"} value={maxValue} onChange={setMaxValueHandler}/></div>
+                        <div>start value: <input type={"number"} value={startValue} onChange={setStartValueHandler}/></div>
                     </div>
                     <div className={'buttonsSettings'}>
-                        <Button title={'SET'} callback={() => {
-                        }} disabled={CountResetDisable}/>
+                        <Button title={'SET'} callback={settingsSet} disabled={CountResetDisable}/>
                     </div>
                 </div>
 
             </div>
             <div className={'counterAll'}>
                 <div className={'counter'}>
-                    <div className={count == 5
+                    <div className={count == maxValue
                         ? 'titleDisable'
                         : 'title'}> {count}
                     </div>
